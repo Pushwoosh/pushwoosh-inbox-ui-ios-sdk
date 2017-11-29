@@ -1,6 +1,6 @@
 # Pushwoosh Inbox UI
 
-[![GitHub release](https://img.shields.io/github/release/Pushwoosh/pushwoosh-inbox-ui-ios-sdk.svg?style=flat-square)](https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/releases) 
+[![GitHub release](https://img.shields.io/github/release/Pushwoosh/pushwoosh-inbox-ui-ios-sdk.svg?style=flat-square)](https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/releases)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/PushwooshInboxUI.svg)](https://cocoapods.org/?q=pushwooshinboxui)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -20,7 +20,7 @@ Enterprise-level feature. For more info, please contact [Pushwoosh Support](http
 
 PushwooshInboxUI supports multiple methods for installing the library in a project.
 
-## Installation with CocoaPods
+### Installation with CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like PushwooshInboxUI in your projects. See the ["Getting Started" guide for more information](http://docs.pushwoosh.com/docs/native-ios-sdk). You can install it with the following command:
 
@@ -68,7 +68,15 @@ github "Pushwoosh/pushwoosh-inbox-ui-ios-sdk" ~> 5.5
 
 Run `carthage` to build the framework and drag the built `PushwooshInboxUI.framework` into your Xcode project.
 
-#### API
+### To show Inbox UI in your app you can:
+
+* Create PWIInboxViewController with default style
+```swift
+PWIInboxUI.createInboxController(with: PWIInboxStyle.default())
+```
+* Just specify custom class PWIInboxViewController for your UIViewController in storyboard or xib
+
+#### If you need customize style PWIInboxViewController, you can see this class [PWIInboxStyle](https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/tree/master/Documentation)
 
 https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/tree/master/Documentation
 
