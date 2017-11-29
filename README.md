@@ -71,7 +71,7 @@ To show Inbox UI in your app you can just add Inbox view controller:
 ```
 self.navigationController?.pushViewController(PWIInboxUI.createInboxController(with: PWIInboxStyle.default()), animated: true)
 ```
-To make the inbox match your app's look, change parameters of `PWIInboxStyle`. You can customize such parameters as font, background color, etc.
+To make the Inbox match your app's look change parameters of `PWIInboxStyle`. You can customize such parameters as font, background color, etc.
 ```//creating a new Inbox style
 let inboxStyle = PWIInboxStyle.customStyle(withDefaultImageIcon: UIImage.init(named: \"custom_image\"),
     textColor: UIColor.darkText,
@@ -95,7 +95,7 @@ self.navigationController?.pushViewController(viewController!, animated: true)"
 
 ## Customization
 To customize Inbox UI style, please see:  
-https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/blob/master/Framework/PushwooshInboxUI.framework/Versions/A/Headers/PWIInboxStyle.h
+https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/blob/master/Framework/PushwooshInboxUI.framework/Versions/A/Headers/PWIInboxStyle.h  
 and  
 https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/blob/master/Framework/PushwooshInboxUI.framework/Versions/A/Headers/PWIInboxUI.h
 
