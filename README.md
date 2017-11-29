@@ -4,8 +4,6 @@
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/PushwooshInboxUI.svg)](https://cocoapods.org/?q=pushwooshinboxui)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-Enterprise-level feature. For more info, please contact [Pushwoosh Support](https://www.pushwoosh.com/contact-us/)
-
 ## How To Get Started
 
 ## Communication
@@ -68,9 +66,37 @@ github "Pushwoosh/pushwoosh-inbox-ui-ios-sdk" ~> 5.5
 
 Run `carthage` to build the framework and drag the built `PushwooshInboxUI.framework` into your Xcode project.
 
-#### API
+## Implementation
+To show Inbox UI in your app you can just add Inbox view controller:
+```self.navigationController?.pushViewController(PWIInboxUI.createInboxController(with: PWIInboxStyle.default()), animated: true)
+```
+To make the inbox match your app's look, change parameters of `PWIInboxStyle`. You can customize such parameters as font, background color, etc.
+```//creating a new Inbox style
+let inboxStyle = PWIInboxStyle.customStyle(withDefaultImageIcon: UIImage.init(named: \"custom_image\"),
+    textColor: UIColor.darkText,
+    accentColor: UIColor.blue,
+    font: UIFont.systemFont(ofSize: 17))
 
-https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/tree/master/Documentation
+//customizing the created style
+inboxStyle?.backgroundColor = UIColor.red;
+inboxStyle?.listErrorMessage = NSLocalizedString(\"Custom error message\", comment: \"Custom error message\")
+inboxStyle?.listEmptyMessage = NSLocalizedString(\"Custom empty message\", comment: \"Custom empty message\")
+
+//creating the view controller
+let viewController = PWIInboxUI.createInboxController(with: inboxStyle)
+
+//localizing the title
+viewController?.title = NSLocalizedString(\"Custom title\", comment: \"Custom title\")
+
+//showing the view controller
+self.navigationController?.pushViewController(viewController!, animated: true)"
+```
+
+## Customization
+To customize Inbox UI style, please see:
+https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/blob/master/Framework/PushwooshInboxUI.framework/Versions/A/Headers/PWIInboxStyle.h
+and
+https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/blob/master/Framework/PushwooshInboxUI.framework/Versions/A/Headers/PWIInboxUI.h
 
 #### Change Log
 
