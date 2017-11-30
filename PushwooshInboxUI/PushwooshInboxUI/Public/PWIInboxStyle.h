@@ -79,6 +79,13 @@ typedef NSString * (^PWIDateFormatterBlock)(NSDate *date, NSObject *owner);
 + (instancetype)defaultStyle;
 
 /**
+ This method updates the default style for PWInboxViewController
+ 
+ @param style the new default style for PWInboxViewController
+ */
++ (void)setupDefaultStyle:(PWIInboxStyle *)style;
+
+/**
  The method filling style's fields based on following parameters: icon, textColor, accentColor, date; all parameters might be changed
  */
 + (instancetype)customStyleWithDefaultImageIcon:(UIImage *)icon

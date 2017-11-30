@@ -9,12 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class PWIInboxStyle, PWIInboxViewController;
+@interface PWIInboxViewController : UIViewController
+
+/**
+ Reloads everything from scratch.
+ */
+- (void)reloadData;
+- (instancetype)init NS_UNAVAILABLE;
+
+@end
+
+@class PWIInboxStyle;
 @interface PWIInboxUI : NSObject
 
 /**
- @return ViewController with a specified style
+ @return PWIInboxViewController with a specified style
  */
-+ (UIViewController *)createInboxControllerWithStyle:(PWIInboxStyle *)style;
++ (PWIInboxViewController *)createInboxControllerWithStyle:(PWIInboxStyle *)style;
 
 @end

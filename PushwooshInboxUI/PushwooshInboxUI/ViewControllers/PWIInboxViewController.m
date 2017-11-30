@@ -37,12 +37,23 @@
 @implementation PWIInboxViewController
 
 - (instancetype)initWithStyle:(PWIInboxStyle *)style {
-    NSString *stringName = NSStringFromClass(self.class);
+    NSString *stringName = self.nibName;
     if (self = [super initWithNibName:stringName bundle:[NSBundle pwi_bundleForClass:self.class]]) {
         _style = style;
         self.title = NSLocalizedString(@"Inbox",);
     }
     return self;
+}
+
+- (NSString *)nibName {
+    return @"PWIInboxViewController";
+}
+
+- (void)loadView {
+    [[NSBundle pwi_bundleForClass:self.class] loadNibNamed:self.nibName owner:self options:nil];
+    if (!_style) {
+        _style = [PWIInboxStyle defaultStyle];
+    }
 }
 
 - (void)updateStyle:(PWIInboxStyle *)style {
@@ -64,13 +75,7 @@
     _emptyMessageLabel.text = _style.listEmptyMessage;
 }
 
-- (void)loadView {
-    NSString *stringName = NSStringFromClass(self.class);
-    [[NSBundle pwi_bundleForClass:self.class] loadNibNamed:stringName owner:self options:nil];
-    if (!_style) {
-        _style = [PWIInboxStyle defaultStyle];
-    }
-}
+#pragma mark -
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -117,10 +122,22 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    __weak typeof(self) wself = self;
+    _observer = [PWIPushwooshHelper.pwInbox addObserverForDidReceiveInPushNotificationCompletion:^(NSArray<NSObject<PWInboxMessageProtocol> *> *messagesAdded) {
+        if (messagesAdded.count) {
+            [wself reloadData];
+        }
+    }];
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [PWIPushwooshHelper.pwInbox removeObserver:_observer];
 }
+
+#pragma mark -
 
 - (void)showErrorView {
     _tableView.hidden = YES;

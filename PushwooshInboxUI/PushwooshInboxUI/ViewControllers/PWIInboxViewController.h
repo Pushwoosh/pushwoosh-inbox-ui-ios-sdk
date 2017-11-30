@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PWIInboxUI.h"
 
 @class PWIInboxStyle;
-@interface PWIInboxViewController : UIViewController
+@interface PWIInboxViewController (Internal)
 
 - (instancetype)initWithStyle:(PWIInboxStyle *)style;
 

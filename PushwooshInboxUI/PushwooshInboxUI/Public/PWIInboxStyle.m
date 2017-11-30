@@ -65,11 +65,22 @@
     _descriptionFont = [font fontWithSize:UIFont.systemFontSize];
     _dateFont = [font fontWithSize:UIFont.smallSystemFontSize];
     
+    _listEmptyMessage = NSLocalizedString(@"There are currently no messages in Inbox.",);
+    _listErrorMessage = NSLocalizedString(@"It seems something went wrong. Please try again later!",);
+    [self updateAccentColor];
+}
+
+- (void)setAccentColor:(UIColor *)accentColor {
+    if (![_accentColor isEqual:accentColor]) {
+        _accentColor = accentColor;
+        [self updateAccentColor];
+    }
+}
+
+- (void)updateAccentColor {
     _unreadImage = [[UIImage imageNamed:@"unread" inBundle:[NSBundle pwi_bundleForClass:self.class] compatibleWithTraitCollection:nil] pwi_imageWithTintColor:_accentColor];
     _listErrorImage = [[UIImage imageNamed:@"errorMessage" inBundle:[NSBundle pwi_bundleForClass:self.class] compatibleWithTraitCollection:nil] pwi_imageWithTintColor:_accentColor];
     _listEmptyImage = [[UIImage imageNamed:@"noMessage" inBundle:[NSBundle pwi_bundleForClass:self.class] compatibleWithTraitCollection:nil] pwi_imageWithTintColor:_accentColor];
-    _listEmptyMessage = NSLocalizedString(@"There are currently no messages in Inbox.",);
-    _listErrorMessage = NSLocalizedString(@"It seems something went wrong. Please try again later!",);
 }
 
 + (void)setupDefaultStyle:(PWIInboxStyle *)style {
