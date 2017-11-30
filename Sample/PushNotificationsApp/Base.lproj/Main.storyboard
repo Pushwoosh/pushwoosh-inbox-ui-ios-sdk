@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="671" y="381"/>
         </scene>
-        <!--Inbox View Controller-->
+        <!--Inbox With Storyboard-->
         <scene sceneID="v8U-YH-XIc">
             <objects>
-                <viewController id="I2Q-bE-xT0" customClass="PWIInboxViewController" sceneMemberID="viewController">
+                <viewController title="Inbox With Storyboard" id="I2Q-bE-xT0" customClass="PWIInboxViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aIP-Wu-wze">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

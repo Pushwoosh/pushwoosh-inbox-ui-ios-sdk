@@ -25,6 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PushNotificationDelegate 
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = PushNotificationManager.push().notificationCenterDelegate
         }
+        
+         //customizing the inbox style
+        let inboxStyle = PWIInboxStyle.customStyle(withDefaultImageIcon: UIImage.init(named: "custom_image"),
+                                                   textColor: UIColor.darkText,
+                                                   accentColor: UIColor.blue,
+                                                   font: UIFont.systemFont(ofSize: 17))
+        
+        inboxStyle?.backgroundColor = UIColor.init(white: 1, alpha: 1)
+        inboxStyle?.listErrorMessage = NSLocalizedString("Custom error message", comment: "Custom error message")
+        inboxStyle?.listEmptyMessage = NSLocalizedString("Custom empty message", comment: "Custom empty message")
+        PWIInboxStyle.setupDefaultStyle(inboxStyle)
+        
         return true
     }
     
