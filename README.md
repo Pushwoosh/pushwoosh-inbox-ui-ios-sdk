@@ -78,19 +78,19 @@ To make the Inbox match your app's look change parameters of `PWIInboxStyle`. Yo
 ```swift
 //creating a new Inbox style
 let inboxStyle = PWIInboxStyle.customStyle(withDefaultImageIcon: UIImage.init(named: "custom_image"),
-                                                   textColor: UIColor.darkText,
-                                                   accentColor: UIColor.blue,
-                                                   font: UIFont.systemFont(ofSize: 17))
+                                          textColor: UIColor.darkText,
+                                          accentColor: UIColor.blue,
+                                          font: UIFont.systemFont(ofSize: 17))
 
-        inboxStyle?.backgroundColor = UIColor.init(white: 1, alpha: 1)
-        inboxStyle?.listErrorMessage = NSLocalizedString("Custom error message", comment: "Custom error message")
-        inboxStyle?.listEmptyMessage = NSLocalizedString("Custom empty message", comment: "Custom empty message")
-        PWIInboxStyle.setupDefaultStyle(inboxStyle)
+inboxStyle?.backgroundColor = UIColor.init(white: 1, alpha: 1)
+inboxStyle?.listErrorMessage = NSLocalizedString("Custom error message", comment: "Custom error message")
+inboxStyle?.listEmptyMessage = NSLocalizedString("Custom empty message", comment: "Custom empty message")
+PWIInboxStyle.setupDefaultStyle(inboxStyle)
 ```
 
 ## Customization
 To customize Inbox UI style, please see:  
-[PWIInboxStyle.h](https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/blob/master/Framework/PushwooshInboxUI.framework/Versions/A/Headers/PWIInboxStyle.h)
+[PWIInboxStyle.h](https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/blob/master/Framework/PushwooshInboxUI.framework/Versions/A/Headers/PWIInboxStyle.h)  
 and  
 [PWIInboxUI.h](https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/blob/master/Framework/PushwooshInboxUI.framework/Versions/A/Headers/PWIInboxUI.h)
 
