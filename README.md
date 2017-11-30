@@ -94,7 +94,7 @@ To customize Inbox UI style, please see:
 and  
 [PWIInboxUI.h](https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/blob/master/Framework/PushwooshInboxUI.framework/Versions/A/Headers/PWIInboxUI.h) 
 
-For more details, take a look at [Inbox samples](Sample).
+For more details, take a look at [Inbox sample](Sample).
 #### Change Log
 
 See this repository's [release tags](https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk/releases) for a complete change log of every released version.
