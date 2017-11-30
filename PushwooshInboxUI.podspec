@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint Pushwoosh.podspec' to ensure this is a
+#  Be sure to run `pod spec lint PushwooshInboxUI.podspec' to ensure this is a
 #
 
 Pod::Spec.new do |s|
@@ -21,7 +21,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk.git", :tag => s.version }
 
   s.dependency 'Pushwoosh', '> 5.5'
-  s.source_files = 'PushwooshInboxUI/**/*.*'
+  s.ios.vendored_frameworks  = 'Framework/PushwooshInboxUI.framework'
+  s.resources = 'Framework/PushwooshInboxBundle.bundle'
 
   s.framework    = 'SystemConfiguration', 'UIKit', 'UserNotifications'
   s.requires_arc = true
