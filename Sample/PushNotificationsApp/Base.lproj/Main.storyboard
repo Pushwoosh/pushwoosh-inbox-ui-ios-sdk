@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6J3-5F-zVG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="uyj-nc-Q6b">
+            <objects>
+                <navigationController id="6J3-5F-zVG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EEQ-X0-k0o">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Lvf-hG-wnl" kind="relationship" relationship="rootViewController" id="DNl-Gn-a0S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BnD-3h-c1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="381"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bPu-Ca-apN">
+            <objects>
+                <viewController id="Lvf-hG-wnl" customClass="ViewController" customModule="PushNotificationsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Dp-Wa-Wi4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-bL-0AB">
+                                <rect key="frame" x="136" y="318.5" width="103" height="30"/>
+                                <state key="normal" title="Show Manually"/>
+                                <connections>
+                                    <action selector="showInboxManually:" destination="Lvf-hG-wnl" eventType="touchUpInside" id="nIy-OV-Wpd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZ2-Q5-s7y">
+                                <rect key="frame" x="90" y="280" width="195" height="30"/>
+                                <state key="normal" title="Show Inbox With Storyboard"/>
+                                <connections>
+                                    <segue destination="I2Q-bE-xT0" kind="show" id="tK9-iO-poI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mql-bL-0AB" firstAttribute="centerX" secondItem="2Dp-Wa-Wi4" secondAttribute="centerX" id="BSL-NB-To1"/>
+                            <constraint firstItem="Mql-bL-0AB" firstAttribute="centerY" secondItem="2Dp-Wa-Wi4" secondAttribute="centerY" id="ifK-JB-cnm"/>
+                            <constraint firstItem="Mql-bL-0AB" firstAttribute="top" secondItem="UZ2-Q5-s7y" secondAttribute="bottom" constant="8" id="tMK-rJ-lJq"/>
+                            <constraint firstItem="UZ2-Q5-s7y" firstAttribute="centerX" secondItem="2Dp-Wa-Wi4" secondAttribute="centerX" id="tU2-vT-XdV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dK9-Lt-XIU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TN2-sL-a9X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DNa-sY-L9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="381"/>
+        </scene>
+        <!--Inbox View Controller-->
+        <scene sceneID="v8U-YH-XIc">
+            <objects>
+                <viewController id="I2Q-bE-xT0" customClass="PWIInboxViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aIP-Wu-wze">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="g71-Pd-ENg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XEc-dP-gfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491" y="373"/>
+        </scene>
+    </scenes>
+</document>
