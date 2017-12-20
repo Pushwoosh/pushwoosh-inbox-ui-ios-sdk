@@ -100,8 +100,6 @@
 /* Begin PBXFileReference section */
 		A42B59EF1FBF12C80061E583 /* NSBundle+PWIHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PWIHelper.h"; sourceTree = "<group>"; };
 		A42B59F01FBF12C80061E583 /* NSBundle+PWIHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PWIHelper.m"; sourceTree = "<group>"; };
-		A469F5DD1FBD82480062CBF5 /* PushwooshInboxBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushwooshInboxBundle.m; sourceTree = "<group>"; };
-		A469F5DF1FBD82480062CBF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A469F6191FBD85030062CBF5 /* PushwooshInboxBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushwooshInboxBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A469F61B1FBD85030062CBF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A46D6F4A1FB303E4003979C7 /* noMessage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noMessage@2x.png"; sourceTree = "<group>"; };
@@ -160,15 +158,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A469F5DC1FBD82480062CBF5 /* PushwooshInboxBundle */ = {
-			isa = PBXGroup;
-			children = (
-				A469F5DD1FBD82480062CBF5 /* PushwooshInboxBundle.m */,
-				A469F5DF1FBD82480062CBF5 /* Info.plist */,
-			);
-			path = PushwooshInboxBundle;
-			sourceTree = "<group>";
-		};
 		A469F61A1FBD85030062CBF5 /* PushwooshInboxBundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				A4DB69A31FA98A37007210E6 /* PushwooshInboxUI */,
-				A469F5DC1FBD82480062CBF5 /* PushwooshInboxBundle */,
 				A469F61A1FBD85030062CBF5 /* PushwooshInboxBundle */,
 				A4DB69A21FA98A37007210E6 /* Products */,
 			);
@@ -386,7 +374,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PWI;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Pushwoosh;
 				TargetAttributes = {
 					A469F59B1FBC3C970062CBF5 = {
@@ -564,18 +552,15 @@
 		A469F61D1FBD85030062CBF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PushwooshInboxBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pushwoosh.PushwooshInboxBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -583,18 +568,15 @@
 		A469F61E1FBD85030062CBF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PushwooshInboxBundle/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pushwoosh.PushwooshInboxBundle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
