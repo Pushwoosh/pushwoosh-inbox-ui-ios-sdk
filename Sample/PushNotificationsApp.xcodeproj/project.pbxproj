@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D60D9171FEA802000377D79 /* PushwooshInboxUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41124711FD0542A006706B3 /* PushwooshInboxUI.framework */; };
-		5D60D9181FEA802000377D79 /* PushwooshInboxUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A41124711FD0542A006706B3 /* PushwooshInboxUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5D60D91A1FEB842C00377D79 /* PushwooshInboxUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41124711FD0542A006706B3 /* PushwooshInboxUI.framework */; };
+		5D60D91B1FEB842C00377D79 /* PushwooshInboxUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A41124711FD0542A006706B3 /* PushwooshInboxUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A411244B1FD04FF6006706B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A411244A1FD04FF6006706B3 /* AppDelegate.swift */; };
 		A411244D1FD04FF6006706B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A411244C1FD04FF6006706B3 /* ViewController.swift */; };
 		A41124501FD04FF6006706B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A411244E1FD04FF6006706B3 /* Main.storyboard */; };
@@ -33,13 +33,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5D60D9191FEA802000377D79 /* Embed Frameworks */ = {
+		5D60D91C1FEB842C00377D79 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5D60D9181FEA802000377D79 /* PushwooshInboxUI.framework in Embed Frameworks */,
+				5D60D91B1FEB842C00377D79 /* PushwooshInboxUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D60D9171FEA802000377D79 /* PushwooshInboxUI.framework in Frameworks */,
+				5D60D91A1FEB842C00377D79 /* PushwooshInboxUI.framework in Frameworks */,
 				A41124781FD05913006706B3 /* libz.tbd in Frameworks */,
 				A41124701FD0525A006706B3 /* Pushwoosh.framework in Frameworks */,
 				A41124761FD0590C006706B3 /* libstdc++.tbd in Frameworks */,
@@ -165,7 +165,7 @@
 				A41124441FD04FF6006706B3 /* Frameworks */,
 				A41124451FD04FF6006706B3 /* Resources */,
 				A411246C1FD0514A006706B3 /* Embed App Extensions */,
-				5D60D9191FEA802000377D79 /* Embed Frameworks */,
+				5D60D91C1FEB842C00377D79 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -443,8 +443,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pushwoosh.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a62267a7-fb3c-4fee-bdfe-8d7399a6a635";
-				PROVISIONING_PROFILE_SPECIFIER = "Pushwoosh Demo Development";
+				PROVISIONING_PROFILE = "8f2b71c5-fb69-4ba4-b2f5-1b69ac3dcf60";
+				PROVISIONING_PROFILE_SPECIFIER = "Universal Development";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -472,8 +472,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pushwoosh.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce50a302-b783-46d3-8bc0-ed809f3952e7";
-				PROVISIONING_PROFILE_SPECIFIER = "Pushwoosh Demo Application";
+				PROVISIONING_PROFILE = "3a9cb646-4a25-4b86-ba3b-9cfe75b24bd9";
+				PROVISIONING_PROFILE_SPECIFIER = "Universal In House";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -486,11 +486,12 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9YV8BDW6YQ;
 				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pushwoosh.demoapp.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "413da97f-057f-4af5-b6ad-37f71516fd6f";
-				PROVISIONING_PROFILE_SPECIFIER = "Pushwoosh Demo NotificationService Development";
+				PROVISIONING_PROFILE = "8f2b71c5-fb69-4ba4-b2f5-1b69ac3dcf60";
+				PROVISIONING_PROFILE_SPECIFIER = "Universal Development";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,14 +502,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9YV8BDW6YQ;
 				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pushwoosh.demoapp.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "413da97f-057f-4af5-b6ad-37f71516fd6f";
-				PROVISIONING_PROFILE_SPECIFIER = "Pushwoosh Demo NotificationService Development";
+				PROVISIONING_PROFILE = "3a9cb646-4a25-4b86-ba3b-9cfe75b24bd9";
+				PROVISIONING_PROFILE_SPECIFIER = "Universal In House";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
