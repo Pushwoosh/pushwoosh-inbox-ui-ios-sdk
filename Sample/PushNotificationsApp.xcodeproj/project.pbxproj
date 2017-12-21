@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D60D91A1FEB842C00377D79 /* PushwooshInboxUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41124711FD0542A006706B3 /* PushwooshInboxUI.framework */; };
-		5D60D91B1FEB842C00377D79 /* PushwooshInboxUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A41124711FD0542A006706B3 /* PushwooshInboxUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5D60D91E1FEB87D800377D79 /* PushwooshInboxUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D60D91D1FEB87D800377D79 /* PushwooshInboxUI.framework */; };
 		A411244B1FD04FF6006706B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A411244A1FD04FF6006706B3 /* AppDelegate.swift */; };
 		A411244D1FD04FF6006706B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A411244C1FD04FF6006706B3 /* ViewController.swift */; };
 		A41124501FD04FF6006706B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A411244E1FD04FF6006706B3 /* Main.storyboard */; };
@@ -33,17 +32,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5D60D91C1FEB842C00377D79 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5D60D91B1FEB842C00377D79 /* PushwooshInboxUI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A411246C1FD0514A006706B3 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D60D91D1FEB87D800377D79 /* PushwooshInboxUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PushwooshInboxUI.framework; sourceTree = "<group>"; };
 		A41124471FD04FF6006706B3 /* PushNotificationsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushNotificationsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A411244A1FD04FF6006706B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A411244C1FD04FF6006706B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +60,6 @@
 		A41124651FD0514A006706B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A411246D1FD05154006706B3 /* NotificationService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationService.entitlements; sourceTree = "<group>"; };
 		A411246F1FD0525A006706B3 /* Pushwoosh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pushwoosh.framework; sourceTree = "<group>"; };
-		A41124711FD0542A006706B3 /* PushwooshInboxUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushwooshInboxUI.framework; path = ../Framework/PushwooshInboxUI.framework; sourceTree = "<group>"; };
 		A41124731FD05438006706B3 /* PushwooshInboxBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = PushwooshInboxBundle.bundle; path = ../Framework/PushwooshInboxBundle.bundle; sourceTree = "<group>"; };
 		A41124751FD0590C006706B3 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		A41124771FD05913006706B3 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -82,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D60D91A1FEB842C00377D79 /* PushwooshInboxUI.framework in Frameworks */,
+				5D60D91E1FEB87D800377D79 /* PushwooshInboxUI.framework in Frameworks */,
 				A41124781FD05913006706B3 /* libz.tbd in Frameworks */,
 				A41124701FD0525A006706B3 /* Pushwoosh.framework in Frameworks */,
 				A41124761FD0590C006706B3 /* libstdc++.tbd in Frameworks */,
@@ -146,9 +134,9 @@
 		A411246E1FD0525A006706B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D60D91D1FEB87D800377D79 /* PushwooshInboxUI.framework */,
 				A41124771FD05913006706B3 /* libz.tbd */,
 				A41124751FD0590C006706B3 /* libstdc++.tbd */,
-				A41124711FD0542A006706B3 /* PushwooshInboxUI.framework */,
 				A411246F1FD0525A006706B3 /* Pushwoosh.framework */,
 			);
 			name = Frameworks;
@@ -165,7 +153,6 @@
 				A41124441FD04FF6006706B3 /* Frameworks */,
 				A41124451FD04FF6006706B3 /* Resources */,
 				A411246C1FD0514A006706B3 /* Embed App Extensions */,
-				5D60D91C1FEB842C00377D79 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
