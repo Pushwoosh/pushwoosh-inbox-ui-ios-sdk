@@ -90,7 +90,7 @@
             [wself reloadData];
         }
     }];
-    if (@available(iOS 11.0, *)) {
+    if ([_tableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     _errorView.hidden = YES;
