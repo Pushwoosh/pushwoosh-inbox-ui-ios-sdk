@@ -8,7 +8,7 @@
 
 #import "PWIInboxMessageViewCell.h"
 #import "UIImageView+PWILoadImage.h"
-#import "PWIInboxStyle.h"
+#import "PushwooshInboxUI.h"
 
 @interface PWIInboxMessageViewCell ()
 

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://www.pushwoosh.com"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
-  s.author       = { "Max Konev" => "max@pushwoosh.com" }
+  s.authors       = { "Max Konev" => "max@pushwoosh.com" }
 
   s.source       = { :git => "https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk.git", :tag => s.version }
 

@@ -90,9 +90,16 @@
             [wself reloadData];
         }
     }];
+    
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wpartial-availability"
+    
     if ([_tableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
+    
+    #pragma clang diagnostic pop
+    
     _errorView.hidden = YES;
     _emptyView.hidden = YES;
 

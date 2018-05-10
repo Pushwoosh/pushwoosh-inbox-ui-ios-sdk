@@ -106,7 +106,9 @@
     }
     [style setup];
     [style setupTextColor:[UIColor darkTextColor] accentColor:accentColor font:[UIFont systemFontOfSize:17]];
-    style.titleFont = [UIFont systemFontOfSize:UIFont.systemFontSize weight:UIFontWeightMedium];
+    
+    style.titleFont = [UIFont systemFontOfSize:UIFont.systemFontSize];
+    
     return style;
 }
 
