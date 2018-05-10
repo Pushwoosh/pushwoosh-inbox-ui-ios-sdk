@@ -5,10 +5,10 @@
 Pod::Spec.new do |s|
 
   s.name         = "PushwooshInboxUI"
-  s.version      = "5.5.2"
+  s.version      = "5.5.3"
   s.summary      = "Pushwoosh Inbox UI library by Pushwoosh."
   s.platform     = :ios
-  s.ios.deployment_target  = '10.0'
+  s.ios.deployment_target  = '8.0'
 
   s.description  = "Pushwoosh Inbox UI library by Pushwoosh. " \
                    "http://www.pushwoosh.com "
