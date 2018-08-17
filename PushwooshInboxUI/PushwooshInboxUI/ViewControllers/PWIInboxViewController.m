@@ -63,16 +63,38 @@
     _refreshControl.tintColor = _style.accentColor;
     _activityIndicatorView.color = _style.accentColor;
     _tableView.separatorColor = _style.separatorColor;
-    
+
     _emptyMessageLabel.font = _style.defaultFont;
     _emptyMessageLabel.textColor = _style.defaultTextColor;
     _errorMessageLabel.font = _style.defaultFont;
     _errorMessageLabel.textColor = _style.defaultTextColor;
-    
+
     _errorImageView.image = _style.listErrorImage;
     _errorMessageLabel.text = _style.listErrorMessage;
     _emptyImageView.image = _style.listEmptyImage;
     _emptyMessageLabel.text = _style.listEmptyMessage;
+
+    [self initStyleNavigationBar];
+}
+
+- (void)initStyleNavigationBar {
+    NSString *title = _style.barTitle;
+    if (title) {
+        self.navigationItem.title = title;
+    }
+    UINavigationBar *bar = self.navigationController.navigationBar;
+    UIColor *barAccentColor = _style.barAccentColor;
+    if (barAccentColor) {
+        bar.tintColor = barAccentColor;
+    }
+    UIColor *backgroundColor = _style.barBackgroundColor;
+    if (backgroundColor) {
+        bar.barTintColor = backgroundColor;
+    }
+    UIColor *barTextColor = _style.barTextColor;
+    if (barTextColor) {
+        bar.titleTextAttributes = @{NSForegroundColorAttributeName: barTextColor};
+    }
 }
 
 #pragma mark -
@@ -90,16 +112,14 @@
             [wself reloadData];
         }
     }];
-    
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wpartial-availability"
-    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpartial-availability"
     if ([_tableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
-    
-    #pragma clang diagnostic pop
-    
+#pragma clang diagnostic pop
+#endif
     _errorView.hidden = YES;
     _emptyView.hidden = YES;
 
