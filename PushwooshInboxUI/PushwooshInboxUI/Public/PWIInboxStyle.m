@@ -67,6 +67,11 @@
     
     _listEmptyMessage = NSLocalizedString(@"There are currently no messages in Inbox.",);
     _listErrorMessage = NSLocalizedString(@"It seems something went wrong. Please try again later!",);
+    
+    _unreadImage = [UIImage imageNamed:@"unread" inBundle:[NSBundle pwi_bundleForClass:self.class] compatibleWithTraitCollection:nil];
+    _listErrorImage = [UIImage imageNamed:@"errorMessage" inBundle:[NSBundle pwi_bundleForClass:self.class] compatibleWithTraitCollection:nil];
+    _listEmptyImage = [UIImage imageNamed:@"noMessage" inBundle:[NSBundle pwi_bundleForClass:self.class] compatibleWithTraitCollection:nil];
+    
     [self updateAccentColor];
 }
 
@@ -77,10 +82,25 @@
     }
 }
 
+- (void)setUnreadImage:(UIImage *)unreadImage {
+    _unreadImage = unreadImage;
+    [self updateAccentColor];
+}
+
+- (void)setListErrorImage:(UIImage *)listErrorImage {
+    _listErrorImage = listErrorImage;
+    [self updateAccentColor];
+}
+
+- (void)setListEmptyImage:(UIImage *)listEmptyImage {
+    _listEmptyImage = listEmptyImage;
+    [self updateAccentColor];
+}
+
 - (void)updateAccentColor {
-    _unreadImage = [[UIImage imageNamed:@"unread" inBundle:[NSBundle pwi_bundleForClass:self.class] compatibleWithTraitCollection:nil] pwi_imageWithTintColor:_accentColor];
-    _listErrorImage = [[UIImage imageNamed:@"errorMessage" inBundle:[NSBundle pwi_bundleForClass:self.class] compatibleWithTraitCollection:nil] pwi_imageWithTintColor:_accentColor];
-    _listEmptyImage = [[UIImage imageNamed:@"noMessage" inBundle:[NSBundle pwi_bundleForClass:self.class] compatibleWithTraitCollection:nil] pwi_imageWithTintColor:_accentColor];
+    _unreadImage = [_unreadImage pwi_imageWithTintColor:_accentColor];
+    _listErrorImage = [_listErrorImage pwi_imageWithTintColor:_accentColor];
+    _listEmptyImage = [_listEmptyImage pwi_imageWithTintColor:_accentColor];
 }
 
 + (void)setupDefaultStyle:(PWIInboxStyle *)style {
@@ -106,7 +126,14 @@
     }
     [style setup];
     [style setupTextColor:[UIColor darkTextColor] accentColor:accentColor font:[UIFont systemFontOfSize:17]];
-    style.titleFont = [UIFont systemFontOfSize:UIFont.systemFontSize weight:UIFontWeightMedium];
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpartial-availability"
+    if ([UIFont respondsToSelector:@selector(systemFontOfSize:weight:)]) {
+        style.titleFont = [UIFont systemFontOfSize:UIFont.systemFontSize weight:UIFontWeightMedium];
+    }
+#pragma clang diagnostic pop
+    
     return style;
 }
 
