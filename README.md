@@ -75,7 +75,7 @@ self.navigationController?.pushViewController(PWIInboxUI.createInboxController(w
 ```
 
 ### Objective-C
-```swift
+```objectivec
 [self.navigationController pushViewController:[PWIInboxUI createInboxControllerWithStyle:[PWIInboxStyle  defaultStyle]] animated:YES];
 ```
 
@@ -97,7 +97,7 @@ PWIInboxStyle.setupDefaultStyle(inboxStyle)
 ```
 
 ### Objective-C
-```swift
+```objectivec
 //creating a new Inbox style
 PWIInboxStyle *inboxStyle = [PWIInboxStyle  customStyleWithDefaultImageIcon:[UIImage imageNamed:@"custom_image"] 
 textColor:UIColor.darkTextColor
