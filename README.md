@@ -69,23 +69,46 @@ Run `carthage` to build the framework and drag the built `PushwooshInboxUI.frame
 ## Implementation
 To show Inbox UI in your app you can just add Inbox view controller:
 
+### Swift
 ```swift
 self.navigationController?.pushViewController(PWIInboxUI.createInboxController(with: PWIInboxStyle.default()), animated: true)
 ```
 
+### Objective-C
+```swift
+[self.navigationController pushViewController:[PWIInboxUI createInboxControllerWithStyle:[PWIInboxStyle  defaultStyle]] animated:YES];
+```
+
 To make the Inbox match your app's look change parameters of `PWIInboxStyle`. You can customize such parameters as font, background color, etc.
 
+### Swift
 ```swift
 //creating a new Inbox style
-let inboxStyle = PWIInboxStyle.customStyle(withDefaultImageIcon: UIImage.init(named: "custom_image"),
-                                          textColor: UIColor.darkText,
-                                          accentColor: UIColor.blue,
-                                          font: UIFont.systemFont(ofSize: 17))
+let inboxStyle = PWIInboxStyle.customStyle(withDefaultImageIcon: UIImage.init(named: "custom_image"), 
+textColor: UIColor.darkText, 
+accentColor: UIColor.blue, 
+font: UIFont.systemFont(ofSize: 17))
 
 inboxStyle?.backgroundColor = UIColor.init(white: 1, alpha: 1)
 inboxStyle?.listErrorMessage = NSLocalizedString("Custom error message", comment: "Custom error message")
 inboxStyle?.listEmptyMessage = NSLocalizedString("Custom empty message", comment: "Custom empty message")
+
 PWIInboxStyle.setupDefaultStyle(inboxStyle)
+```
+
+### Objective-C
+```swift
+//creating a new Inbox style
+PWIInboxStyle *inboxStyle = [PWIInboxStyle  customStyleWithDefaultImageIcon:[UIImage imageNamed:@"custom_image"] 
+textColor:UIColor.darkTextColor
+accentColor:UIColor.blueColor
+font:[UIFont systemFontOfSize:17]];
+
+inboxStyle.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
+inboxStyle.listErrorMessage = NSLocalizedString(@"Custom error message", @"Custom error message");
+inboxStyle.listEmptyMessage = NSLocalizedString(@"Custom empty message", @"Custom empty message");
+
+[PWIInboxStyle setupDefaultStyle:inboxStyle];
 ```
 
 ## Customization
