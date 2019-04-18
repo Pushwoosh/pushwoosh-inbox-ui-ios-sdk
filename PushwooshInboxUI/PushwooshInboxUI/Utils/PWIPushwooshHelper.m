@@ -9,7 +9,7 @@
 #import "PWIPushwooshHelper.h"
 #import "PushwooshInboxUI.h"
 
-#define kPushwooshVersionPrefix @"5.5"
+#define kPushwooshVersionPrefix @"5."
 #define kPushwooshVersion @"5.5+"
 #define kIntegrateSDKLink @"http://docs.pushwoosh.com/docs/native-ios-sdk"
 
