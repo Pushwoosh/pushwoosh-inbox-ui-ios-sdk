@@ -12,6 +12,7 @@
 #import "PWIInboxStyle.h"
 #import "PWInbox.h"
 #import "NSBundle+PWIHelper.h"
+#import "PWIInboxAttachmentViewController.h"
 
 @interface PWIInboxViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -214,6 +215,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSObject<PWInboxMessageProtocol> *message = _messages[indexPath.row];
     PWIInboxMessageViewCell *cell = [PWIInboxMessageViewCell pwi_cellForTableView:tableView style:_style];
+    __weak typeof(self) wself = self;
+    [cell setInboxAttachmentTappedCallback:^void (UIImageView *imageView, NSString *attachmentUrl) {
+        [wself showInboxAttachmentViewControllerForImageView:imageView withAttachment:attachmentUrl];
+    }];
     [cell updateMessage:message];
     return cell;
 }
@@ -222,6 +227,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSObject<PWInboxMessageProtocol> *message = _messages[indexPath.row];
     [PWIPushwooshHelper.pwInbox performActionForMessageWithCode:message.code];
+    
+    if (_onMessageClickBlock) {
+        _onMessageClickBlock(message);
+    }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         PWIInboxMessageViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -272,6 +281,15 @@
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewCellEditingStyleDelete;
+}
+
+- (void)showInboxAttachmentViewControllerForImageView:(UIImageView *)imageView withAttachment:(NSString *)attachmentUrl {
+    PWIInboxAttachmentViewController *attachmentViewController = [[PWIInboxAttachmentViewController alloc] initWithStyle:_style];
+    attachmentViewController.modalPresentationStyle = UIModalPresentationCustom;
+    attachmentViewController.transitioningDelegate = attachmentViewController;
+    attachmentViewController.attachmentUrl = attachmentUrl;
+    attachmentViewController.animationBeginView = imageView;
+    [self presentViewController:attachmentViewController animated:YES completion:nil];
 }
 
 @end

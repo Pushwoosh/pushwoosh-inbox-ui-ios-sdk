@@ -8,7 +8,7 @@
 
 @interface UIImageView (PWILoadImage)
 
-- (void)pwi_loadImageFromUrl:(NSString *)url;
+- (void)pwi_loadImageFromUrl:(NSString *)url callback:(void (^)(UIImage *image))callback;
 - (BOOL)pwi_isLoading;
 
 @end

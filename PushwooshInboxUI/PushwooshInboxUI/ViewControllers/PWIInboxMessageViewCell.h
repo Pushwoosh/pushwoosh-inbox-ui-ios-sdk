@@ -17,4 +17,5 @@
 
 - (void)updateStyle:(PWIInboxStyle *)style;
 - (void)updateMessage:(NSObject<PWInboxMessageProtocol> *)message;
+- (void)setInboxAttachmentTappedCallback:(void (^)(UIImageView *, NSString *))inboxAttachmentTappedCallback;
 @end

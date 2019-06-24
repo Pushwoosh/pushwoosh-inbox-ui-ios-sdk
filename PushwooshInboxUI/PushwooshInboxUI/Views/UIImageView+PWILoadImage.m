@@ -9,7 +9,7 @@
 
 @interface UIImageView (PWILoadImagePrivate)
 
-- (void)pwi_loadImageFinished:(UIImage *)image memCache:(BOOL)memCache;
+- (void)pwi_loadImageFinished:(UIImage *)image memCache:(BOOL)memCache callback:(void (^)(UIImage *image))callback;
 - (void)pwi_loadImageStarted;
 
 - (void)setPWILoadingUrl:(NSString *)url;
@@ -50,12 +50,21 @@ static char pwiLoadImageUrl;
     return instance;
 }
 
-- (void)loadImageWithUrl:(NSString *)url imageView:(UIImageView *)imageView {
+- (void)loadImageWithUrl:(NSString *)url imageView:(UIImageView *)imageView callback:(void (^)(UIImage *image))callback {
     NSString *prevLoadingUrl = [imageView pwi_loadingUrl];
-    if (url && [prevLoadingUrl isEqualToString:url])
+    if (url.length == 0 || [prevLoadingUrl isEqualToString:url])
         return;
     if (prevLoadingUrl) {
-        [_imageViews[prevLoadingUrl] removeObject:imageView];
+        NSMutableArray *refs = _imageViews[prevLoadingUrl];
+        for (NSInteger i = 0; i < refs.count; ++i) {
+            PWIWeakRef *ref = refs[i];
+            if (ref.object == imageView) {
+                [refs removeObject:ref];
+            }
+        }
+        if (refs.count == 0) {
+            _imageViews[prevLoadingUrl] = nil;
+        }
     }
     imageView.image = nil;
     if (!url)
@@ -68,16 +77,16 @@ static char pwiLoadImageUrl;
         if (!waitingImageViews) {
             waitingImageViews = [NSMutableArray arrayWithObject:[PWIWeakRef refWithObject:imageView]];
             _imageViews[url] = waitingImageViews;
-            [self loadImageWithUrl:url fromCache:YES cachedEtag:nil cachedLastModified:nil];
+            [self loadImageWithUrl:url fromCache:YES cachedEtag:nil cachedLastModified:nil callback:callback];
         } else {
             [waitingImageViews addObject:[PWIWeakRef refWithObject:imageView]];
         }
     } else {
-        [imageView pwi_loadImageFinished:image memCache:YES];
+        [imageView pwi_loadImageFinished:image memCache:YES callback: callback];
     }
 }
 
-- (void)loadImageWithUrl:(NSString *)url fromCache:(BOOL)cache cachedEtag:(NSString *)cachedEtag cachedLastModified:(NSString *)cachedLastModified {
+- (void)loadImageWithUrl:(NSString *)url fromCache:(BOOL)cache cachedEtag:(NSString *)cachedEtag cachedLastModified:(NSString *)cachedLastModified callback:(void (^)(UIImage *image))callback {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:cache ? NSURLRequestReturnCacheDataDontLoad : NSURLRequestUseProtocolCachePolicy timeoutInterval:120];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -86,7 +95,7 @@ static char pwiLoadImageUrl;
         NSString *lastModified = httpResponse.allHeaderFields[@"Last-Modified"];
         void (^handleLoadFinished)(void) = ^{
             if (cache) {
-                [self loadImageWithUrl:url fromCache:NO cachedEtag:etag cachedLastModified:lastModified];
+                [self loadImageWithUrl:url fromCache:NO cachedEtag:etag cachedLastModified:lastModified callback:callback];
             } else {
                 NSArray *refs = _imageViews[url];
                 for (PWIWeakRef<UIImageView *> *ref in refs) {
@@ -102,7 +111,7 @@ static char pwiLoadImageUrl;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     NSArray *refs = _imageViews[url];
                     for (PWIWeakRef<UIImageView *> *ref in refs) {
-                        [ref.object pwi_loadImageFinished:image memCache:NO];
+                        [ref.object pwi_loadImageFinished:image memCache:NO callback:callback];
                     }
                     handleLoadFinished();
                 });
@@ -133,12 +142,15 @@ static char pwiLoadImageUrl;
     return objc_getAssociatedObject(self, &pwiLoadImageUrl);
 }
 
-- (void)pwi_loadImageFinished:(UIImage *)image memCache:(BOOL)memCache {
+- (void)pwi_loadImageFinished:(UIImage *)image memCache:(BOOL)memCache callback:(void (^)(UIImage *image))callback {
     self.image = image;
     if (!memCache && self.alpha < 0.5) {
         [UIView animateWithDuration:0.2 animations:^{
             self.alpha = 1;
         }];
+    }
+    if (callback != nil) {
+        callback(image);
     }
 }
 
@@ -146,8 +158,8 @@ static char pwiLoadImageUrl;
     self.alpha = 0;
 }
 
-- (void)pwi_loadImageFromUrl:(NSString *)url {
-    [[PWIImageLoader sharedInstance] loadImageWithUrl:url imageView:self];
+- (void)pwi_loadImageFromUrl:(NSString *)url callback:(void (^)(UIImage *image))callback {
+    [[PWIImageLoader sharedInstance] loadImageWithUrl:url imageView:self callback:callback];
 }
 
 - (BOOL)pwi_isLoading {

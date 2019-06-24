@@ -1,7 +1,3 @@
-#
-#  Be sure to run `pod spec lint PushwooshInboxUI.podspec' to ensure this is a
-#
-
 Pod::Spec.new do |s|
 
   s.name         = "PushwooshInboxUI"
@@ -9,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary      = "Pushwoosh Inbox UI library by Pushwoosh."
   s.platform     = :ios
   s.ios.deployment_target  = '8.0'
-
+  s.version      = "5.16.0"
   s.description  = "Pushwoosh Inbox UI library by Pushwoosh. " \
                    "http://www.pushwoosh.com "
 
@@ -20,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/Pushwoosh/pushwoosh-inbox-ui-ios-sdk.git", :tag => s.version }
 
-  s.dependency 'Pushwoosh', '> 5.5'
+  s.dependency 'Pushwoosh', '~> 5.16'
   s.ios.vendored_frameworks  = 'Framework/PushwooshInboxUI.framework'
   s.resources = 'Framework/PushwooshInboxBundle.bundle'
 

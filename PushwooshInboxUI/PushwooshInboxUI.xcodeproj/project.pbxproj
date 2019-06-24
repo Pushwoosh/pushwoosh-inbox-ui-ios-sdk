@@ -21,6 +21,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		2A708F9322C15C01002086B2 /* PWIInboxAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9090D98E22A12ECD005853B9 /* PWIInboxAttachmentViewController.m */; };
+		2A708F9422C15C15002086B2 /* PWIInboxAttachmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9090D98F22A12ECD005853B9 /* PWIInboxAttachmentViewController.xib */; };
+		2A708F9522C15C16002086B2 /* PWIInboxAttachmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9090D98F22A12ECD005853B9 /* PWIInboxAttachmentViewController.xib */; };
+		2A708F9622C15C24002086B2 /* PWIInboxAttachmentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9090D98D22A12ECD005853B9 /* PWIInboxAttachmentViewController.h */; };
+		9090D99022A12ECD005853B9 /* PWIInboxAttachmentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9090D98D22A12ECD005853B9 /* PWIInboxAttachmentViewController.h */; };
+		9090D99122A12ECD005853B9 /* PWIInboxAttachmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9090D98E22A12ECD005853B9 /* PWIInboxAttachmentViewController.m */; };
+		9090D99222A12ECD005853B9 /* PWIInboxAttachmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9090D98F22A12ECD005853B9 /* PWIInboxAttachmentViewController.xib */; };
 		A42B59F11FBF12C80061E583 /* NSBundle+PWIHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = A42B59EF1FBF12C80061E583 /* NSBundle+PWIHelper.h */; };
 		A42B59F21FBF12C80061E583 /* NSBundle+PWIHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = A42B59EF1FBF12C80061E583 /* NSBundle+PWIHelper.h */; };
 		A42B59F31FBF12C80061E583 /* NSBundle+PWIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A42B59F01FBF12C80061E583 /* NSBundle+PWIHelper.m */; };
@@ -98,6 +105,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9090D98D22A12ECD005853B9 /* PWIInboxAttachmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PWIInboxAttachmentViewController.h; sourceTree = "<group>"; };
+		9090D98E22A12ECD005853B9 /* PWIInboxAttachmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PWIInboxAttachmentViewController.m; sourceTree = "<group>"; };
+		9090D98F22A12ECD005853B9 /* PWIInboxAttachmentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PWIInboxAttachmentViewController.xib; sourceTree = "<group>"; };
 		A42B59EF1FBF12C80061E583 /* NSBundle+PWIHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PWIHelper.h"; sourceTree = "<group>"; };
 		A42B59F01FBF12C80061E583 /* NSBundle+PWIHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PWIHelper.m"; sourceTree = "<group>"; };
 		A469F6191FBD85030062CBF5 /* PushwooshInboxBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushwooshInboxBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +226,9 @@
 				A4DB69CA1FA98FE9007210E6 /* PWIInboxViewController.h */,
 				A4DB69CB1FA98FE9007210E6 /* PWIInboxViewController.m */,
 				A4F321AE1FA9B74B00A8058E /* PWIInboxViewController.xib */,
+				9090D98D22A12ECD005853B9 /* PWIInboxAttachmentViewController.h */,
+				9090D98E22A12ECD005853B9 /* PWIInboxAttachmentViewController.m */,
+				9090D98F22A12ECD005853B9 /* PWIInboxAttachmentViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -285,6 +298,7 @@
 				A4DB69E71FA9AA50007210E6 /* UIImageView+PWILoadImage.h in Headers */,
 				A4DB69DF1FA9913F007210E6 /* PWIWeakRef.h in Headers */,
 				A4DB69C51FA98E67007210E6 /* PWIInboxUI.h in Headers */,
+				9090D99022A12ECD005853B9 /* PWIInboxAttachmentViewController.h in Headers */,
 				A4F321D21FAC07FC00A8058E /* UIImage+PWITintColor.h in Headers */,
 				A4DB69A61FA98A37007210E6 /* PushwooshInboxUI.h in Headers */,
 				A42B59F11FBF12C80061E583 /* NSBundle+PWIHelper.h in Headers */,
@@ -304,6 +318,7 @@
 				A4DCE5251FBB1768009CE923 /* PWIInboxMessageViewCell.h in Headers */,
 				A4DCE5261FBB176C009CE923 /* PWIInboxViewController.h in Headers */,
 				A4DCE5291FBB1783009CE923 /* PushwooshInboxUI.h in Headers */,
+				2A708F9622C15C24002086B2 /* PWIInboxAttachmentViewController.h in Headers */,
 				A4DCE5241FBB1764009CE923 /* UIImageView+PWILoadImage.h in Headers */,
 				A4DCE5201FBB1751009CE923 /* PWIWeakRef.h in Headers */,
 				A42B59F21FBF12C80061E583 /* NSBundle+PWIHelper.h in Headers */,
@@ -421,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A469F5B91FBD749B0062CBF5 /* PWIInboxViewController.xib in Resources */,
+				2A708F9422C15C15002086B2 /* PWIInboxAttachmentViewController.xib in Resources */,
 				A469F5B81FBD74930062CBF5 /* PWIInboxMessageViewCell.xib in Resources */,
 				A469F5B51FBD743C0062CBF5 /* unread.png in Resources */,
 				A469F5B41FBD74390062CBF5 /* inbox_icon.png in Resources */,
@@ -434,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A469F6241FBD85310062CBF5 /* PWIInboxViewController.xib in Resources */,
+				2A708F9522C15C16002086B2 /* PWIInboxAttachmentViewController.xib in Resources */,
 				A469F6201FBD851D0062CBF5 /* unread.png in Resources */,
 				A469F61F1FBD851A0062CBF5 /* inbox_icon.png in Resources */,
 				A469F6231FBD852D0062CBF5 /* PWIInboxMessageViewCell.xib in Resources */,
@@ -447,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A46D6F4D1FB303EB003979C7 /* errorMessage@2x.png in Resources */,
+				9090D99222A12ECD005853B9 /* PWIInboxAttachmentViewController.xib in Resources */,
 				A4F321D51FAC0C6800A8058E /* unread.png in Resources */,
 				A4F321D61FAC0C6B00A8058E /* inbox_icon.png in Resources */,
 				A4F321AF1FA9B74B00A8058E /* PWIInboxViewController.xib in Resources */,
@@ -491,6 +509,7 @@
 				A4DB69C21FA98DDA007210E6 /* PWIInboxStyle.m in Sources */,
 				A4DB69E01FA9913F007210E6 /* UITableViewCell+PWIHelper.m in Sources */,
 				A4DB69CE1FA98FE9007210E6 /* PWIInboxViewController.m in Sources */,
+				9090D99122A12ECD005853B9 /* PWIInboxAttachmentViewController.m in Sources */,
 				A4DB69DD1FA9913F007210E6 /* PWIWeakRef.m in Sources */,
 				A42B59F31FBF12C80061E583 /* NSBundle+PWIHelper.m in Sources */,
 				A4DB69C61FA98E67007210E6 /* PWIInboxUI.m in Sources */,
@@ -508,6 +527,7 @@
 				A4DCE5151FBAEA16009CE923 /* PWIInboxMessageViewCell.m in Sources */,
 				A4DCE5141FBAEA10009CE923 /* PWIInboxViewController.m in Sources */,
 				A4DCE5171FBAEA35009CE923 /* UIImage+PWITintColor.m in Sources */,
+				2A708F9322C15C01002086B2 /* PWIInboxAttachmentViewController.m in Sources */,
 				A4DCE5121FBAE9F4009CE923 /* PWIInboxUI.m in Sources */,
 				A42B59F41FBF12C80061E583 /* NSBundle+PWIHelper.m in Sources */,
 				A4DCE5191FBAEAC0009CE923 /* UITableViewCell+PWIHelper.m in Sources */,
@@ -615,7 +635,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5.8.7;
+				CURRENT_PROJECT_VERSION = 5.8.5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -675,7 +695,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5.8.7;
+				CURRENT_PROJECT_VERSION = 5.8.5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -705,7 +725,7 @@
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 5.8.7;
+				DYLIB_CURRENT_VERSION = 5.8.5;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PushwooshInboxUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -727,7 +747,7 @@
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 5.8.7;
+				DYLIB_CURRENT_VERSION = 5.8.5;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PushwooshInboxUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
