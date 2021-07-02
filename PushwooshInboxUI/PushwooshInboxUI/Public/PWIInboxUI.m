@@ -19,4 +19,9 @@ NSString * const PushwooshInboxUIVersion = @"5.8.5";
     return inboxViewController;
 }
 
++ (UIViewController *)createInboxControllerWithStyle:(PWIInboxStyle *)style andContentHeight:(CGFloat)contentHeight {
+    PWIInboxViewController *inboxViewController = [[PWIInboxViewController alloc] initWithStyle:style andContentHeight:contentHeight];
+    return inboxViewController;
+}
+
 @end

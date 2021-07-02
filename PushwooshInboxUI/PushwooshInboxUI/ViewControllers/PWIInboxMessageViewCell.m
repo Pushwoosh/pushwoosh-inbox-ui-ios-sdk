@@ -49,7 +49,7 @@
 - (void)updateMessage:(NSObject<PWInboxMessageProtocol> *)message {
     _message = message;
     _titleLabel.attributedText = [self titleAttributedStringForMessage:message];
-    _messageLabel.text = message.message;
+    _messageLabel.attributedText = [self textAttributedStringForMessage:message];
     [_inboxImageView pwi_loadImageFromUrl:message.imageUrl callback:nil];
     if (!message.imageUrl.length) {
         _inboxImageView.image = _style.defaultImageIcon;
@@ -87,7 +87,11 @@
     }
     
     if (message.title) {
-        [string appendAttributedString:[[NSAttributedString alloc] initWithString:message.title]];
+        if (message.isRead && _style.readTitleColor) {
+            [string appendAttributedString:[[NSAttributedString alloc] initWithString:message.title attributes:@{NSForegroundColorAttributeName : _style.readTitleColor}]];
+        } else {
+            [string appendAttributedString:[[NSAttributedString alloc] initWithString:message.title]];
+        }
     }
     
     if (message.sendDate) {
@@ -100,6 +104,16 @@
                                                                                                           }]];
     }
     return string;
+}
+
+- (NSAttributedString *)textAttributedStringForMessage:(NSObject<PWInboxMessageProtocol> *)message {
+    return (message.isRead && _style.readTextColor) ? [self textMessage:message.message textColor:_style.readTextColor] : [self textMessage:message.message textColor:_style.defaultTextColor];
+}
+
+- (NSMutableAttributedString *)textMessage:(NSString *)message textColor:(UIColor *)color {
+    NSMutableAttributedString *modifiedMessage = [[NSMutableAttributedString alloc] init];
+    [modifiedMessage appendAttributedString:[[NSAttributedString alloc] initWithString:message attributes:@{NSForegroundColorAttributeName : color}]];
+    return modifiedMessage;
 }
 
 - (IBAction)attachmentButtonTapped:(id)sender {

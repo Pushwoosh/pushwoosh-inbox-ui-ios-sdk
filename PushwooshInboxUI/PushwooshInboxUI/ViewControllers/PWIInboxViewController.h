@@ -13,5 +13,6 @@
 @interface PWIInboxViewController (Internal)
 
 - (instancetype)initWithStyle:(PWIInboxStyle *)style;
+- (instancetype)initWithStyle:(PWIInboxStyle *)style andContentHeight:(CGFloat)contentHeight;
 
 @end

@@ -32,6 +32,7 @@
 @property (weak, nonatomic) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) NSObject *observer;
 @property (nonatomic) BOOL isLoading;
+@property (nonatomic) CGFloat tableViewHeight;
 
 @end
 
@@ -41,6 +42,16 @@
     NSString *stringName = self.nibName;
     if (self = [super initWithNibName:stringName bundle:[NSBundle pwi_bundleForClass:self.class]]) {
         _style = style;
+        self.title = NSLocalizedString(@"Inbox",);
+    }
+    return self;
+}
+
+- (instancetype)initWithStyle:(PWIInboxStyle *)style andContentHeight:(CGFloat)contentHeight {
+    NSString *stringName = self.nibName;
+    if (self = [super initWithNibName:stringName bundle:[NSBundle pwi_bundleForClass:self.class]]) {
+        _style = style;
+        _tableViewHeight = contentHeight;
         self.title = NSLocalizedString(@"Inbox",);
     }
     return self;
@@ -138,6 +149,9 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    
+    _tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-self.tableViewHeight);
+
     if (self.navigationController.navigationBar.translucent) {
         CGRect navigationBarRect = self.navigationController.navigationBar.frame;
         float insetsY = navigationBarRect.size.height + navigationBarRect.origin.y;
