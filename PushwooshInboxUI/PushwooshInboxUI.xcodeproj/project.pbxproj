@@ -488,7 +488,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -x\n. ../build/create_inbox_framework_ios.sh || exit 1\n\n";
+			shellScript = "set -x\n. ../build/create_inbox_framework_ios.sh && \\\n. ../build/create_inbox_xcframework_ios.sh || exit 1\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
