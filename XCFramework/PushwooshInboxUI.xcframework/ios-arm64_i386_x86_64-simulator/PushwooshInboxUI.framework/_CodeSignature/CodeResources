@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rwTnQGm3id7HR+tDH2Ak0mcRivA=
+		c5VDirVbMUq8JJs/SKfqu6LUsZA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -26,15 +26,15 @@
 		</data>
 		<key>PWIInboxAttachmentViewController.nib</key>
 		<data>
-		BS4FLipthPftUX332Md7DBC/2ks=
+		UDOlfwW2BkFCNJicMkgJM7DPTrk=
 		</data>
 		<key>PWIInboxMessageViewCell.nib</key>
 		<data>
-		KFXgrWkk643O+tb//qqhY91x4N8=
+		pGIx2qUvjilrTbTLuUmGgUPfU9Q=
 		</data>
 		<key>PWIInboxViewController.nib</key>
 		<data>
-		2sigi1WIaSDK0YLfixSftYf0crc=
+		6qn6LhsY3QVwLPVVAjuTtebsctk=
 		</data>
 		<key>errorMessage@2x.png</key>
 		<data>
@@ -103,33 +103,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BS4FLipthPftUX332Md7DBC/2ks=
+			UDOlfwW2BkFCNJicMkgJM7DPTrk=
 			</data>
 			<key>hash2</key>
 			<data>
-			iqwrowOYqBZmW+g+AWXWpWKsBTj/3ObXoNFum1vCZ3I=
+			Xv1I3vx3J7SzteF8+i3Ar/6cR43Re7YjP1A3FFN8lJo=
 			</data>
 		</dict>
 		<key>PWIInboxMessageViewCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KFXgrWkk643O+tb//qqhY91x4N8=
+			pGIx2qUvjilrTbTLuUmGgUPfU9Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			VI5XZrt7Nw7KcqEjYfoeICvJFFxgBzNfvDy6aVY8LRE=
+			7u+MCAzZrOr1qUS3GgZfMPLspiC4n/V27142IzyAhfM=
 			</data>
 		</dict>
 		<key>PWIInboxViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2sigi1WIaSDK0YLfixSftYf0crc=
+			6qn6LhsY3QVwLPVVAjuTtebsctk=
 			</data>
 			<key>hash2</key>
 			<data>
-			uT58JWMh1l4a/P9U2tZphWJm6sv3/RkswPt5kbnLXWI=
+			Fd1Mrq0DONEFy0fThP1MrzQ6mZ94YW3bCokAhnm0Nds=
 			</data>
 		</dict>
 		<key>errorMessage@2x.png</key>
